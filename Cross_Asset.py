@@ -35,6 +35,7 @@ def create_dashboard(title, fig):
 
 # Pipeline
 prices = download_data(tickers, start_date="2026-01-01", end_date="2026-03-10")
+print(prices)
 pct_returns = normalize_pct(prices)
 title = "Cross-Asset Market Monitor — Performance (%)"
 fig = plot(pct_returns, title)
