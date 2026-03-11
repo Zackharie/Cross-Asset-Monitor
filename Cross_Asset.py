@@ -16,7 +16,6 @@ def download_data(tickers, start_date=None, end_date=None):
     )["Close"]
     return data
 
-
 def normalize_pct(prices):
     return (prices / prices.iloc[0] - 1) * 100  # en %
 
@@ -36,8 +35,6 @@ def create_dashboard(title, fig):
 
 # Pipeline
 prices = download_data(tickers, start_date="2026-01-01", end_date="2026-03-10")
-print(prices)
-print()
 pct_returns = normalize_pct(prices)
 title = "Cross-Asset Market Monitor — Performance (%)"
 fig = plot(pct_returns, title)
